@@ -11,8 +11,8 @@ const config = {
 
 let packageDefinition = protoLoader.loadSync(PROTO_PATH, config);
 let link_proto = grpc.loadPackageDefinition(packageDefinition).linkDiscoverer;
-const HOST = 'link-discover-unauth-enwgt7akpq-uc.a.run.app';
-// const HOST = 'localhost';
+// const HOST = 'link-discover-unauth-enwgt7akpq-uc.a.run.app';
+const HOST = 'localhost';
 const PORT = 8080;
 
 function main() {
