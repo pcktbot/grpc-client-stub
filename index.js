@@ -10,14 +10,14 @@ const config = {
 };
 
 let packageDefinition = protoLoader.loadSync(PROTO_PATH, config);
-let link_proto = grpc.loadPackageDefinition(packageDefinition).linkDiscoverer;
-// const HOST = 'link-discover-unauth-enwgt7akpq-uc.a.run.app';
-const HOST = 'localhost';
-const PORT = 8080;
+let linkDiscoverer = grpc.loadPackageDefinition(packageDefinition).linkDiscoverer;
+const HOST = 'link-discover-unauth-enwgt7akpq-uc.a.run.app';
+// const HOST = 'localhost';
+const PORT = 443;
 
 function main() {
-  let client = new link_proto.LinkDiscoverer(`${HOST}:${PORT}`, grpc.credentials.createInsecure());
-  let call = client.discoverLinks({ url: 'https://solaire8250.com/' });
+  let client = new linkDiscoverer.LinkDiscoverer(`${HOST}:${PORT}`, grpc.credentials.createInsecure());
+  let call = client.DiscoverLinks({ url: 'https://solaire8250.com/' });
 
   call.on('data', function (response) {
     console.log({ response });

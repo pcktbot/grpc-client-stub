@@ -2,9 +2,9 @@
   "name": "grpc-streams-nodejs-demo",
   "version": "1.0.0",
   "description": "",
-  "main": "client_grpc_server_stream.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node ./client_grpc_server_stream.js",
+    "start": "node ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
